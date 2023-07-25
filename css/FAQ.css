@@ -1,0 +1,148 @@
+* {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #dad7cd;
+}
+
+/* #region Title */
+section {
+    user-select: none;
+    position: relative;
+    clip-path: polygon(100% 0, 100% 55%, 50% 85%, 0 55%, 0 0);
+}
+
+section img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    object-position: 50% 80%;
+    opacity: .8;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Kaushan Script', cursive;
+    position: absolute;
+    top: 40%;
+    transform: translate(0, -50%);
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.title h2 {
+    font-size: 3.25rem;
+}
+
+.title p {
+    font-family: 'Kaushan Script', cursive;
+    margin-top: 10px;
+    font-size: 2.25rem;
+    word-spacing: 10px;
+}
+/* #endregion */
+
+/* #region FAQ */
+.container {
+    max-width: 960px;
+    margin: 30px auto 90px auto;
+}
+
+.accordion-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.accordion-container .accordion-title {
+    border: 2px dashed #344e41;
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 2em 1em 1.75em;
+    background-color: #588157;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #fff;
+    cursor: pointer;
+    word-spacing: 5px;
+    line-height: 35px;
+}
+
+.accordion-content {
+    font-size: 1.15em;
+    padding: 10px 10px 0 50px;
+    border: 2px dashed #344e41;
+    background-color: #fff;
+    line-height: 1.5;
+    word-spacing: 3px;
+}
+
+.accordion-container .accordion-title:hover,
+.accordion-container .accordion-title:active,
+.accordion-title.open {
+    background-color: #344e41;
+}
+
+/* 十字的豎 */
+.accordion-container .accordion-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    width: 15px;
+    height: 2px;
+    transform: rotate(90deg);
+    background: #ccd5ae;
+    transition: all .3s ease-in-out;
+}
+
+/* 十字的橫 */
+.accordion-container .accordion-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    width: 15px;
+    height: 2px;
+    background: #ccd5ae;
+    transition: all .2s ease-in-out;
+}
+
+.accordion-container .accordion-title.open::before {
+    transform: rotate(180deg);
+}
+
+.accordion-container .accordion-title.open::after {
+    opacity: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .title h2 {
+        font-size: 2.75rem;
+    }
+    
+    .title p {
+        font-size: 1.75rem;
+    }
+    
+    .accordion-container .accordion-title {
+        font-size: 1.15em;
+    }
+    
+    .accordion-content {
+        font-size: 0.95em;
+    }
+}
+
+/* #endregion */

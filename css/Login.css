@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #283618;
+    background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+main {
+    padding: 60px 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #dad7cd80;
+    border: 2px solid #283618;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active {
+    height: 700px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    display: block;
+}
+
+.wrapper.active .form-box.login {
+    display: none;
+    transition: none;
+}
+
+.wrapper .form-box.register {
+    display: none;
+    position: absolute;
+    transition: none;
+}
+
+.wrapper.active .form-box.register {
+    display: block;
+}
+
+.form-box h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    color: #283618;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #283618;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #283618;
+    font-weight: 600;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #283618;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+/* #region Show password */
+.input-box span.icon.eye-off,
+.input-box span.icon.eye {
+    position: absolute;
+    right: 50px;
+    font-size: 1.4em;
+    color: #283618;
+    line-height: 59px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.input-box input:valid~span.icon.eye-off {
+    visibility: visible;
+}
+
+.input-box input:valid~span.icon.eye-off.active {
+    visibility: hidden;
+}
+
+.input-box input:valid~span.icon.eye.active {
+    visibility: visible;
+}
+
+.input-box span.icon.reg-eye-off,
+.input-box span.icon.reg-eye {
+    position: absolute;
+    right: 50px;
+    font-size: 1.4em;
+    color: #283618;
+    line-height: 59px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.input-box input:valid~span.icon.reg-eye-off {
+    visibility: visible;
+}
+
+.input-box input:valid~span.icon.reg-eye-off.active {
+    visibility: hidden;
+}
+
+.input-box input:valid~span.icon.reg-eye.active {
+    visibility: visible;
+}
+
+/* #endregion */
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #283618;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 1em;
+    color: #283618;
+    font-weight: 600;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #283618;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    font-weight: 600;
+    color: #606c38;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    color: #1e2e26;
+    text-decoration: underline;
+}
+
+.wrapper .button {
+    width: 100%;
+    height: 45px;
+    background: #283618;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.wrapper .button:hover {
+    box-shadow: 0 0 5px #000000;
+    background-color: #606c38;
+}
+
+.login-register {
+    font-size: 1em;
+    color: #283618;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0 5px;
+}
+
+.login-register p a {
+    color: #606c38;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.login-register p a:hover {
+    color: #1e2e26;
+    text-decoration: underline;
+}
+
+.form-box.register .input-box {
+    margin: 25px 0 10px 0;
+}
+
+.form-box.register .remember-forgot {
+    margin: 10px 0;
+}
+
+.line {
+    position: relative;
+    height: 2px;
+    width: 100%;
+    margin: 18px 0;
+    background-color: #283618;
+}
+
+.line::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    padding: 0 15px;
+}
+
+.media-options a {
+    word-spacing: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.field.facebook {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4267b3;
+}
+
+.field.facebook:hover {
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .6);
+    background-color: #385899;
+}
+
+.media-options .facebook-icon {
+    font-size: 1.8em;
+    position: absolute;
+    left: 50px;
+}
+
+.field.google {
+    margin-top: 20px;
+    border: 1px solid #CACACA;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #232836;
+    background-color: #fff;
+}
+
+.field.google:hover {
+    color: #232836;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .6);
+    background-color: #e6e6e6;
+}
+
+.media-options .google-icon {
+    height: 25px;
+    width: 25px;
+    object-fit: cover;
+    position: absolute;
+    left: 55px;
+}
+
+@media screen and (max-width: 772px) {
+    main {
+        padding: 120px 0;
+    }
+
+    .wrapper {
+        width: 550px;
+        height: 550px;
+    }
+
+    .wrapper.active {
+        height: 600px;
+    }
+
+    .form-box h2 {
+        font-size: 2em;
+    }
+
+    .input-box {
+        height: 30px;
+        margin-top: 25px 0;
+    }
+
+    .input-box label {
+        font-size: 1.2em;
+    }
+
+    .input-box input {
+        font-size: .8em;
+    }
+
+    .input-box .icon {
+        font-size: 1.2em;
+        line-height: 35px;
+    }
+
+    .wrapper .button {
+        height: 35px;
+        font-size: 1.2em;
+    }
+
+    .line {
+        margin: 9px 0;
+        background-color: #283618;
+    }
+
+    .line::before {
+        padding: 0 8px;
+    }
+
+    .field.facebook {
+        font-size: 1.2em;
+    }
+
+    .media-options .facebook-icon {
+        font-size: 1.5em;
+    }
+
+    .field.google {
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+
+    .media-options .google-icon {
+        height: 20px;
+        width: 20px;
+        left: 54px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .wrapper {
+        width: 450px;
+        height: 450px;
+    }
+
+    .wrapper.active {
+        height: 500px;
+    }
+
+    .form-box h2 {
+        font-size: 1.5em;
+    }
+
+    .input-box {
+        height: 25px;
+        margin-top: 15px 0;
+    }
+
+    .input-box label {
+        font-size: .9em;
+    }
+
+    .input-box input {
+        font-size: .6em;
+    }
+
+    .input-box .icon {
+        font-size: 1em;
+        line-height: 25px;
+    }
+
+    .wrapper .button {
+        height: 35px;
+        font-size: 1em;
+    }
+
+    .remember-forgot {
+        font-size: .8em;
+    }
+
+    .login-register {
+        font-size: .8em;
+        margin: 12px 0 5px;
+    }
+
+    .line {
+        margin: 9px 0;
+        background-color: #283618;
+    }
+
+    .line::before {
+        padding: 0 5px;
+    }
+
+    .field.facebook {
+        font-size: .8em;
+    }
+
+    .media-options .facebook-icon {
+        font-size: 1.5em;
+    }
+
+    .field.google {
+        margin-top: 10px;
+        font-size: .8em;
+    }
+
+    .media-options .google-icon {
+        height: 14px;
+        width: 14px;
+        left: 53px;
+    }
+}

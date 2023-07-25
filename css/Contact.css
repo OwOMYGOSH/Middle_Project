@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #dad7cd;
+}
+
+#form-title {
+    display: block;
+    font-size: 3em;
+    color: #344e41;
+    line-height: 1.2;
+    text-align: center;
+    padding-top: 28px;
+}
+
+#form-desc {
+    display: block;
+    color: #344e41;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.form-label {
+    font-size: 20px;
+}
+
+label span {
+    color: #ff0000;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+form {
+    box-shadow: 7px 7px 7px -5px #000000;
+    border: 5px double #344e41;
+    width: 800px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 45px 55px 45px;
+    color: #344e41;
+    font-weight: 600;
+}
+
+.text-center button {
+    border: 2px solid #344e41;
+    border-radius: 10px;
+    padding: 7px 10px;
+    color: #344e41;
+    background-color: #ffffff;
+    margin-top: 20px;
+    width: 170px !important;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.text-center button:hover {
+    background-color: #344e41;
+    color: #fff;
+}
+
+.service {
+    text-align: center;
+    color: #344e41;
+}
+
+.service .service-head {
+    word-spacing: 4px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.service .service-icon {
+    font-size: 3em;
+    transition: color .2s;
+}
+
+.service .service-icon:hover {
+    color: #588157;
+}
+
+.service .service-title {
+    font-size: 1.8em;
+}
+
+.service .service-content {
+    margin: 10px 0 30px 0;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 1199px) {
+    .service .service-head {
+        font-size: 1.3em;
+    }
+    
+    .service .service-icon {
+        font-size: 2.5em;
+    }
+
+    .service .service-content {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .service .service-head {
+        font-size: 1.2em;
+    }
+
+    .service .service-title {
+        font-size: 1.5em;
+    }
+    
+    .service .service-content {
+        font-size: 1em;
+    }
+}
